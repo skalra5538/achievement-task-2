@@ -1,129 +1,111 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+#Name= Sachin Kalra 
+#Author= Madiha Kazmi
+#Date created= 5 october 2022
+#Date last modified= 5 october 2022
+# Purpose:
+# this program will act as a geometry calculator for the calculations of area (in centimeter) and 
+# perimeter(centimeter square)  of different shapes according to the values entered by the user.
 
-# C extensions
-*.so
+#PUESDOCODE:
+# first define all the function together and then follow these steps:
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+#1) Ask user to provide a number between 1 and 4 for choice of shape
+#2) Accept user’s input
+#3) Ask user to enter the values for calculation.
+#4) Accept user’s input
+#5) Check user’s 2nd input:
+#6)Accept user’s input
+#7 Check user’s 3rd input:
+#8)Accept user’s input
+#9)Check user’s 4th input:
+#10)Accept user’s input
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+#if user entered 1:
+# display the area and perimeter of circle
+#if user did not enter 1 then check if user entered 2 and, if yes:
+# display the area and perimeter of rectangle 
+#if user enter 3:
+# display the area and perimeter of square
+# if user enter 4
+# display the message thankyou for quitting
+#if user entered a value other than 1,2,3,4:
+# display a message asking user to enter a valid value 
+#here we are defining the functions for area and perimeter of circle
+def areaofcircle(radius):
+        area1 = 3.14*radius*radius
+        return  area1
+def perimeterofcircle(radius):
+    perimeter1 = 2*3.14*radius
+    return perimeter1
+#here we are defining the functions for area and perimeter of rectangle
+def areaofrectangle(width):
+    area2 = width*length
+    return area2
+def perimeterofrectangle(length):
+    perimeter2= 2* length+width
+    return perimeter2
+# here we are defining the functions for area and perimeter of square
+def areaofsquare(side):
+    area3 =  side*side
+    return area3
+def perimeterofsquare(side):
+    perimeter3=4*side
+    return perimeter3
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+print("Geometry shape Calculator")
+print("1. Calculate the area and perimeter of circle")
+print("2. Calculate the area and perimeter of rectangle")
+print("3. Calculate the area and perimeterof a square")
+print("4. Quit")
+#now  it will ask the user to select the shape by pressing the key according to user's choice of shape 
+print ("select the shape:")
+print("1 - circle") 
+print("2 - rectangle")
+print("3 - square")
+print("4- Quit")
 
-# Translations
-*.mo
-*.pot
+print("enter your choice (1-4)")
+choice= int(input())
+# when user want the calculation of circle and press 1
+if choice ==1:
+    print("enter the radius of circle")
+    radius=float(input())
+#calling of function
+    area1 = areaofcircle(radius)
+    perimeter1 = perimeterofcircle(radius)
+    print("The area of circle is",area1 , "square centimetes")
+    print("The perimeter of circle is",perimeter1, "cm")
+# when user wants the calculation of rectangle and press 2
+elif choice== 2:
+    print("enter the rectangle width:")
+    width=input().strip()
+    width=float(width)
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+    print("enter the rectangle length:")
+    length=input().strip()
+    length=float(length)
+# calling of function
+    area2 = areaofrectangle(width)
+    perimeter2 = perimeterofrectangle(length)
 
-# Flask stuff:
-instance/
-.webassets-cache
+    print("the area of rectangle is" , area2, "square centimetes")
+    print("the perimeter of rectangle is",perimeter2, "cm")
+# when the user wants calculations of square and press 3
+elif choice== 3:
+    print ("enter the  heigth of square:")
+    side=input().strip()
+    side=float(side)
+# calling of function
+    area3 = areaofsquare(side)
+    perimeter3 = perimeterofsquare(side)
 
-# Scrapy stuff:
-.scrapy
+    print("the area of the square is :" , area3, "square centimetes")
+    print ("the perimeter  of the square is :" , perimeter3 , "cm")
 
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+#if user press 4, it will display the following message of quit
+elif choice==4:
+        print("thankyou for quitting ")
+#when user will  enter a number other than defined (i.e.1234), it will show to enter a valid value
+else :
+    print("enter a valid value between 1-4 only")
